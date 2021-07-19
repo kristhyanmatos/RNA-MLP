@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 
 
 class AprendizagemVinho:
-    def __init__(self) -> None:
+    def __init__(self, numero_epocas) -> None:
         self.dados = pandas.read_csv(
             "https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data"
         )
@@ -49,7 +49,7 @@ class AprendizagemVinho:
         self.hist = self.modelo.fit(
             self.entradas_treino,
             self.saidas_treino,
-            epochs=70,
+            epochs=numero_epocas,
             validation_split=0.3,
         )
 
